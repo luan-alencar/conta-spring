@@ -1,9 +1,14 @@
 package david.augusto.luan.domain.model;
 
-import lombok.*;
+import david.augusto.luan.domain.exceptions.SaldoInsuficienteException;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 public abstract class Conta {
 
@@ -11,7 +16,7 @@ public abstract class Conta {
 	private int conta;
 	private String titular;
 	private double saldo;
-	
+
 	public Conta() {
 	}
 
@@ -21,6 +26,11 @@ public abstract class Conta {
 		this.titular = titular;
 		this.saldo = 0;
 	}
-	
-	
+
+	public void sacar(double valor) throws SaldoInsuficienteException {
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException();
+		}
+		this.saldo -= valor;
+	}
 }
