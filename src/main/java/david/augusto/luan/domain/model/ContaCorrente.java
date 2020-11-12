@@ -26,6 +26,11 @@ public final class ContaCorrente extends Conta {
 	public void sacar(double valor) throws SaldoInsuficienteException {
 		super.sacar(valor);
 	}
+	
+	@Override
+	public double getValorTributo() {
+		return 12;
+	}
 
 	public static void main(String[] args) throws SaldoInsuficienteException {
 		ContaCorrente c = new ContaCorrente(001,1234, "Luan");
@@ -35,8 +40,4 @@ public final class ContaCorrente extends Conta {
 		System.out.println("O saldo de " + c.getTitular() + " após sacar é: R$ " + c.getSaldo());
 	}
 
-	@Override
-	public double getValorTributo() {
-		return 0;
-	}
 }
