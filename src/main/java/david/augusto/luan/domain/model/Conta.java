@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class Conta {
+public abstract class Conta implements Tributavel {
 
 	private int agencia;
 	private int conta;

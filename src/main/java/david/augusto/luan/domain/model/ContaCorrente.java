@@ -2,7 +2,7 @@ package david.augusto.luan.domain.model;
 
 import david.augusto.luan.domain.exceptions.SaldoInsuficienteException;
 
-public class ContaCorrente extends Conta {
+public final class ContaCorrente extends Conta {
 
 	public ContaCorrente(int agencia, int conta, String titular, double saldo) {
 		super(agencia, conta, titular, saldo);
@@ -33,5 +33,10 @@ public class ContaCorrente extends Conta {
 		System.out.println("O saldo de " + c.getTitular() + " é: R$ " + c.getSaldo());
 		c.sacar(2000);
 		System.out.println("O saldo de " + c.getTitular() + " após sacar é: R$ " + c.getSaldo());
+	}
+
+	@Override
+	public double getValorTributo() {
+		return 0;
 	}
 }

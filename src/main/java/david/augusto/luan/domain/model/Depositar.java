@@ -2,7 +2,7 @@ package david.augusto.luan.domain.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class Depositar extends Conta {
+public class Depositar {
 
 	@Autowired
 	private Conta service;
