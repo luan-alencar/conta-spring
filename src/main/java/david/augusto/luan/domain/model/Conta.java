@@ -27,10 +27,15 @@ public abstract class Conta {
 		this.saldo = 0;
 	}
 
+	
+	public void depositar(double valor) {
+		this.saldo += valor;
+	}
+
 	public void sacar(double valor) throws SaldoInsuficienteException {
 		if (this.saldo < valor) {
 			throw new SaldoInsuficienteException();
 		}
-		this.saldo -= valor;
+		this.saldo -= valor; 
 	}
 }
